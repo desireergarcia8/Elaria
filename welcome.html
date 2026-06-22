@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<link rel="stylesheet" href="./welcome.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+</head>
+<body>
+  	<div class="welcome">
+    		<img class="fondo-icon" alt="" src="fondo.png">
+    		<div class="group-parent">
+      			<div class="group-container">
+                    <button class="group-child crear-cuenta-btn" onclick="crearCuenta()">
+                      <b>Crear cuenta</b>
+                    </button>
+                     <button class="group-item iniciar-sesion-btn" onclick="iniciarSesion()">
+                      <b>Iniciar sesión</b>
+                    </button>
+                </div>
+
+      			<div class="hola-parent">
+        				<b class="hola">¡Hola!</b>
+        				<div class="las-mejores-historias">Las mejores historias se disfrutan <br>mejor acompañadas.</div>
+        				<div class="aqu-las-historias">Aquí las historias no se leen solas.</div>
+      			</div>
+    		</div>
+  	</div>
+
+	<script>
+		function crearCuenta(){
+			document.location = "crearcuenta.html";
+		}
+
+		function iniciarSesion(){
+			document.location = "login.html"
+		}
+	</script>
+</body>
+</html>

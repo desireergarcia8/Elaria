@@ -1,0 +1,541 @@
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
+:root {
+    /* Colores */
+    --color-primary: #75162d;
+    --color-primary-dark: #4a0e1d;
+    --color-background: #faf6ee;
+    --color-text-light: #faf6ee;
+
+    /* Tipografía */
+    --font-family: Inter, sans-serif;
+    --font-size-base: 18px;
+    --font-size-sm: 14px;
+    --font-size-xs: 10px;
+    --font-size-lg: 30px;
+
+    /* Layout Fijo */
+    --app-width: 412px;
+    --app-height: 917px;
+}
+
+/* ============================================================
+   RESET Y CONTENEDOR PRINCIPAL
+   ============================================================ */
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+.home {
+    width: var(--app-width);
+    height: var(--app-height);
+    position: relative;
+    background-color: var(--color-background);
+    text-align: left;
+    font-size: var(--font-size-sm);
+    color: #000;
+    font-family: var(--font-family);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.pull-to-refresh {
+  position:relative;
+  top: -60px;
+  width: 100%;
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+  z-index: 999;
+}
+.pull-to-refresh.seen {
+  top: 0 !important; /* Alteracion de posicion */
+  height: 6vh !important; /* Altura de espacio cuando aparece Spinner */
+  transition: height 0.5s ease-in-out; /* Animacion de transicion de la altura modificada */
+}
+
+/* ============================================================
+   BARRAS SUPERIORES Y DE ESTADO
+   ============================================================ */
+.app-bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--app-width);
+    height: 121px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.app-bar-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--color-background);
+    width: var(--app-width);
+    height: 121px;
+}
+
+.buscar-icon {
+    position: absolute;
+    top: 60px;
+    left: 346px;
+    width: 33px;
+    height: 33px;
+    z-index: 3;
+}
+
+.logo-icon {
+    position: absolute;
+    top: 60px;
+    left: 142px;
+    width: 128px;
+    height: 33px;
+    object-fit: cover;
+    z-index: 3;
+}
+
+.hamburguer-icon {
+    position: absolute;
+    top: 55px;
+    left: 24px;
+    width: 44px;
+    height: 44px;
+    z-index: 3;
+}
+
+.barra1-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--app-width);
+    height: 52px;
+    object-fit: cover;
+    z-index: 4;
+}
+
+.barra2-icon {
+    position: absolute;
+    top: 865px;
+    left: 0px;
+    width: var(--app-width);
+    height: 52px;
+    object-fit: cover;
+    z-index: 4;
+}
+
+/* ============================================================
+   ZONA PUBLICAR
+   ============================================================ */
+.publicar {
+    position: absolute;
+    top: calc(50% - 308.5px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 392px;
+    height: 70px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    font-family: var(--font-family);
+}
+
+.publicar-child {
+    position: absolute;
+    top: calc(50% - 35px);
+    left: 0px;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    width: 392px;
+    height: 62px;
+}
+
+.publicar-item {
+    position: absolute;
+    top: calc(50% - 35px);
+    left: 0px;
+    border-radius: 15px;
+    background-color: var(--color-primary);
+    width: 392px;
+    height: 70px;
+}
+
+.rectangle-parent {
+    position: absolute;
+    top: calc(50% - 19px);
+    left: calc(50% - 135px);
+    width: 270px;
+    height: 38px;
+}
+
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: var(--color-background);
+    width: 270px;
+    height: 38px;
+}
+
+.qu-est-pasando {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    display: inline-block;
+    width: 189px;
+    color: #4a4a4a;
+    text-align: left;
+}
+
+.mas-icon {
+    position: absolute;
+    width: 10.2%;
+    top: calc(50% - 20px);
+    left: 3.06%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 40px;
+    object-fit: contain;
+}
+
+.send-icon {
+    position: absolute;
+    height: 42.86%;
+    width: 7.65%;
+    top: 28.57%;
+    right: 4.34%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ============================================================
+   POSTS / TARJETAS DE CONTENIDO 
+   ============================================================ */
+.post-1, .post-2 {
+    position: absolute;
+    left: 0px;                     
+    width: var(--app-width);       
+    height: 280px;
+    flex-shrink: 0;
+}
+
+.post-1 {
+    top: calc(50% - 171.5px);
+}
+
+.post-2 {
+    top: calc(50% + 125px);
+    font-size: 16px;
+}
+
+.post-1-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-bottom: 1px solid var(--color-primary-dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    width: 100%;                  
+    height: 100%;
+    border-radius: 0px;           
+}
+
+
+.post-1 .post-1-child {
+    border-top: 1px solid var(--color-primary-dark);
+}
+
+/* ============================================================
+   ELEMENTOS INTERNOS 
+   ============================================================ */
+.postimg-icon {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 370px;                  
+    height: 160px;
+    object-fit: cover;
+}
+
+.imgperfil-icon {
+    position: absolute;
+    top: 22px;
+    left: 21px;                    
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+}
+
+.sofia-bautista, .camila-ewens {
+    position: absolute;
+    top: 32px;
+    left: 74px;                    
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.like {
+    position: absolute;
+    bottom: 15px;
+    left: 21px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.like-icon {
+    font-size: 26px;
+    color: var(--color-primary);
+}
+
+.div {
+    position: relative;
+    font-weight: 300;
+}
+
+.save{
+    position: absolute;
+    bottom: 15px;
+    right: 21px;
+    cursor: pointer;
+}
+
+.save-icon{
+    font-size: 26px;
+    color: var(--color-primary);
+}
+
+.comment {
+    position: absolute;
+    bottom: 15px;
+    left: 103px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.div2 {
+    width: 9px;
+    position: relative;
+    font-weight: 300;
+    display: inline-block;
+}
+
+/* ============================================================
+   BLOQUE INTERNO DE CITA 
+   ============================================================ */
+.postquote {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 160px;
+    font-size: 13px;
+}
+
+.postquote-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: var(--color-background);
+    width: 100%;
+    height: 100%;
+}
+
+.q2-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+.q1-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.cap-2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-weight: 600;
+}
+
+.better-than-the {
+    position: absolute;
+    bottom: 20px;
+    left: 70px;
+}
+
+.postquote-item {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary-dark);
+    width: 60%;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.postquote-inner {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary-dark);
+    width: 50%;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.rectangle-div {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary-dark);
+    width: 55%;
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   FILTROS DE BÚSQUEDA Y OTROS ELEMENTOS
+   ============================================================ */
+.filtro-genero {
+    position: absolute;
+    top: calc(50% - 220.5px);
+    left: calc(50% - 196px);
+    width: 93px;
+    height: 31px;
+    color: #fff;
+}
+
+.filtro-genero-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    background-color: var(--color-primary-dark);
+    width: 93px;
+    height: 31px;
+}
+
+.todos {
+    position: absolute;
+    top: 7px;
+    left: 16px;
+    font-weight: 500;
+}
+
+.down-icon {
+    position: absolute;
+    top: 6px;
+    left: 60.4px;
+    border-radius: 20px;
+    width: 20.9px;
+    height: 20.9px;
+}
+
+.filtro-genero2 {
+    position: absolute;
+    top: calc(50% - 220.5px);
+    left: calc(50% - 83px);
+    width: 100px;
+    height: 31px;
+    color: #fff;
+}
+
+.filtro-genero2-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    background-color: var(--color-primary-dark);
+    width: 100px;
+    height: 31px;
+}
+
+.down-icon2 {
+    position: absolute;
+    top: 5px;
+    left: 67px;
+    border-radius: 20px;
+    width: 22.9px;
+    height: 22.9px;
+}
+
+.dark-mode-icon {
+    position: absolute;
+    top: 725px;
+    left: 339px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    z-index: 3;
+}
+
+/* ============================================================
+   BARRA DE NAVEGACIÓN INFERIOR 
+   ============================================================ */
+.nav-bar {
+    position: absolute;
+    top: 803px;
+    left: 0px;
+    background-color: var(--color-primary-dark);
+    width: var(--app-width);
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    opacity: 1; 
+    transition: transform 0.15s ease;
+}
+
+.nav-btn:active {
+    transform: scale(0.88); 
+}
+
+.home-icon {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    display: block;
+}
