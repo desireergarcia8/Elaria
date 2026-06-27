@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet" href="./configuracion.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+</head>
+<body>
+  	
+  	<div class="configuraciones">
+    		
+    		<div class="app-bar">
+      			<div class="app-bar-child"></div>
+      			<b class="configuracin-titulo">Configuración</b>
+    		</div>
+
+			<button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+    <img class="hamburguer-icon" src="hamburguer.svg" alt="">
+</button>
+
+<div class="overlay" id="overlay"></div>
+<nav class="drawer" id="drawer">
+    <div class="drawer-header">
+        <img src="perfil3.svg" alt="Perfil" class="drawer-profile">
+        <h2>Daniela Velásquez</h2>
+        <span>@daniela_v</span>
+    </div>
+
+    <div class="drawer-menu">
+        <a href="perfilpersonal.html">
+            <img src="persona.svg">
+            <span>Mi perfil</span>
+        </a>
+        <a href="#">
+            <img src="guardados.svg">
+            <span>Mis lecturas</span>
+        </a>
+        <a href="#">
+            <img src="persona4.svg">
+            <span>Clubes de lectura</span>
+        </a>
+        <a href="#">
+            <img src="corazon.svg">
+            <span>Favoritos</span>
+        </a>
+        <a href="#">
+            <img src="listaa.svg">
+            <span>Lista por leer</span>
+        </a>
+    </div>
+
+    <a href="configuracion.html" class="drawer-settings">
+
+        <div class="left">
+            <img src="ajuste.svg">
+            <span>Configuración</span>
+        </div>
+        <img src="go.svg">
+    </a>
+</nav>
+    		
+    		<div class="card-perfil">
+      			<div class="group-child"></div>
+      			<img class="perfil1-icon" alt="Foto de Perfil" src="perfil1.png">
+      			<b class="daniela-velasquz">Daniela Velasquéz</b>
+      			<div class="daniela-v">@daniela_v</div>
+      			<button class="ver-perfil-btn">Ver perfil</button>
+    		</div>
+    		
+    		<b class="seccion-titulo cuenta-pos">CUENTA</b>
+    		<div class="card card1">
+      			<button class="config-option-btn top-round">
+        				<img class="option-icon" alt="" src="persona5.svg">
+        				<span class="option-text">Información personal</span>
+      			</button>
+      			<button class="config-option-btn">
+        				<img class="option-icon" alt="" src="candado2.svg">
+        				<span class="option-text">Privacidad</span>
+      			</button>
+      			<button class="config-option-btn no-border bottom-round">
+        				<img class="option-icon" alt="" src="noti.svg">
+        				<span class="option-text">Notificaciones</span>
+      			</button>
+    		</div>
+    		
+    		<b class="seccion-titulo preferencias-pos">PREFERENCIAS</b>
+    		<div class="card card2">
+      			<button class="config-option-toggle top-round">
+        				<img class="option-icon" alt="" src="eye.svg">
+        				<span class="option-text">Modo sin spoilers</span>
+        				<img class="toggle-icon" alt="Toggle" src="toggle.svg">
+      			</button>
+      			<button class="config-option-btn no-border bottom-round">
+        				<img class="option-icon" alt="" src="language.svg">
+        				<span class="option-text">Idioma</span>
+      			</button>
+    		</div>
+    		
+    		<b class="seccion-titulo peligro-pos">ZONA DE PELIGRO</b>
+    		<div class="card card3">
+      			<button class="config-option-btn top-round">
+        				<img class="option-icon" alt="" src="salir.svg">
+        				<span class="option-text">Cerrar sesión</span>
+      			</button>
+      			<button class="config-option-btn no-border bottom-round">
+        				<img class="option-icon" alt="" src="basurero.svg">
+        				<span class="option-text">Eliminar cuenta</span>
+      			</button>
+    		</div>
+  	</div>
+
+	<script>
+	const menuBtn=document.getElementById("menuBtn");
+
+const drawer=document.getElementById("drawer");
+
+const overlay=document.getElementById("overlay");
+
+menuBtn.onclick=()=>{
+
+    drawer.classList.add("open");
+
+    overlay.classList.add("show");
+
+}
+
+overlay.onclick=()=>{
+
+    drawer.classList.remove("open");
+
+    overlay.classList.remove("show");
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet" href="./realizarpubli.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap" />
+</head>
+<body>
+  	
+  	<div class="realizar-publicacion">
+    		<div class="app-bar">
+      			<div class="app-bar-child"></div>
+                <button class="btn-icon-click" id="salirBtn" onclick="volver()">
+    <img class="salir-icon" alt="" src="salir2.svg" >
+</button>
+      			<button class="publicar-btn" id="publicarBtnContainer">Publicar</button>
+    		</div>
+    		
+    		<div class="nav-barcontenedor"></div>
+    		<div class="nav">
+    <button class="btn-icon-click">
+        <img class="add-a-photo-icon" alt="" src="add_a_photo.svg">
+    </button>
+    
+    <button class="btn-icon-click">
+        <img class="add-a-photo-icon" alt="" src="image.svg">
+    </button>
+    
+    <button class="btn-icon-click">
+        <img class="add-a-photo-icon" alt="" src="gif_box.svg">
+    </button>
+    
+    <button class="btn-icon-click">
+        <img class="add-a-photo-icon" alt="" src="animated_images.svg">
+    </button>
+</div>
+    		
+    	<textarea class="qu-est-pasando" id="postContent" placeholder="¿Qué está pasando?" style="background: none; border: none; resize: none; outline: none; font-family: var(--font-family); height: 200px;"></textarea>
+    		
+    		<div class="recta">
+      			<div class="compartir-una-quote">Compartir una quote</div>
+    		</div>
+    		<img class="guardadon-icon" alt="" src="guardadon.svg">
+    		
+    		<i class="contiene-spoilers">Contiene spoilers</i>
+    		<div class="check">
+                <img class="che" src="check.svg">
+    		</div>
+  	</div>
+  	
+  	<script>
+    		var publicarBtnContainer = document.getElementById("publicarBtnContainer");
+var postContent = document.getElementById("postContent");
+
+if (publicarBtnContainer) {
+    publicarBtnContainer.addEventListener("click", function (e) {
+        var texto = postContent.value.trim();
+        
+        if (texto === "") {
+            alert("¡No puedes publicar un post vacío!");
+            return;
+        }
+
+        // Obtener los posts existentes o iniciar un array vacío
+        var posts = JSON.parse(localStorage.getItem("misPosts")) || [];
+        
+        // Crear la estructura de un nuevo post simulando tu diseño base
+        var nuevoPost = {
+            id: Date.now(),
+            usuario: "Daniela Velásquez",
+            avatar: "perfil3.svg", 
+            contenido: texto,
+            likes: 0,
+            comments: 0
+        };
+
+        // Añadir el post al inicio de la lista
+        posts.unshift(nuevoPost);
+        localStorage.setItem("misPosts", JSON.stringify(posts));
+
+        // Redirigir de vuelta al Home
+        window.location.href = "home.html"; 
+    });
+}
+    </script>
+
+    <script>
+        function volver(){
+            document.location = "home.html"
+        }
+    </script>
+</body>
+</html>

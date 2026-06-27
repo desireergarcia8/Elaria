@@ -1,0 +1,829 @@
+/* ============================================================
+   VARIABLES GLOBALES
+   ============================================================ */
+:root {
+    --color-primary-dark: #4a0e1d;
+    --color-accent-pink: rgba(224, 115, 141, 0.72);
+    --color-text-dark: #000;
+    --color-text-muted: #8a7f7a;
+    --color-white: #fff;
+    --font-family: Inter, sans-serif;
+    
+    --app-width: 412px;
+    --app-height: 1102px;
+}
+
+body {
+  	margin: 0;
+  	line-height: normal;
+  	background-color: #f0f0f0; 
+}
+
+/* ============================================================
+   Contenedor principal centrado
+   ============================================================*/
+.perfil-personal {
+  	width: var(--app-width);
+  	height: var(--app-height);
+  	position: relative;
+  	background-color: var(--color-white);
+  	text-align: left;
+  	font-size: 12px;
+  	color: var(--color-primary-dark);
+  	font-family: var(--font-family);
+  	margin: 0 auto; 
+  	overflow-x: hidden; 
+}
+
+
+.btn-nav-click {
+  	background: none;
+  	border: none;
+  	padding: 0;
+  	cursor: pointer;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	outline: none;
+  	transition: opacity 0.15s ease;
+}
+
+.btn-nav-click:active {
+  	opacity: 0.7; 
+}
+
+.generos-favoritos {
+  	position: absolute;
+  	top: 366px;
+  	left: 24px;
+  	font-size: 14px;
+  	font-weight: 600;
+}
+.amo-perderme-en {
+  	position: absolute;
+  	top: 300px;
+  	left: 24px;
+  	font-size: 13px;
+  	color: #000;
+  	display: inline-block;
+  	width: 365px;
+}
+.daniela-v {
+  	position: absolute;
+  	top: 264px;
+  	left: 24px;
+  	font-size: 16px;
+  	color: #af2848;
+}
+.cardarriba {
+  	position: absolute;
+  	top: calc(50% - 430px);
+  	left: calc(50% - 206px);
+  	width: 412px;
+  	height: 127px;
+}
+.carda {
+  	position: absolute;
+  	top: calc(50% - 63.5px);
+  	left: calc(50% - 206px);
+  	width: 412px;
+  	height: 127px;
+}
+.cardarri {
+  	position: absolute;
+  	top: calc(50% - 63.5px);
+  	left: calc(50% - 206px);
+  	background-color: #4a0e1d;
+  	width: 412px;
+  	height: 127px;
+}
+.editar {
+  	position: absolute;
+  	top: calc(50% - 352px);
+  	left: calc(50% - 61px);
+  	width: 104px;
+  	height: 26px;
+  	font-size: 10px;
+}
+.filtro1 {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 52px);
+  	width: 104px;
+  	height: 26px;
+}
+.filtro1-child {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 52px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 104px;
+  	height: 26px;
+}
+.lapiz-icon {
+  	position: absolute;
+  	top: 3px;
+  	left: 75px;
+  	width: 19px;
+  	height: 19px;
+}
+.editar-perfil {
+  	position: absolute;
+  	top: 6px;
+  	left: 14px;
+  	font-weight: 600;
+}
+.daniela-velasquz {
+  	position: absolute;
+  	top: 165px;
+  	left: 145px;
+  	font-size: 20px;
+  	display: inline-block;
+  	color: #fff;
+  	width: 201px;
+  	height: 23px;
+}
+.app-bar {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	width: 412px;
+  	height: 121px;
+  	font-size: 24px;
+}
+.app-bar-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	background-color: #faf6ee;
+  	width: 412px;
+  	height: 121px;
+}
+.mi-perfil {
+  	position: absolute;
+  	top: 65px;
+  	left: calc(50% - 48px);
+}
+
+.perfil2-icon {
+  	position: absolute;
+  	top: 133px;
+  	left: 24px;
+  	border-radius: 50%;
+  	width: 100px;
+  	height: 102px;
+  	object-fit: cover;
+}
+.filtro12 {
+  	position: absolute;
+  	top: calc(50% - 154px);
+  	left: calc(50% - 176px);
+  	width: 83px;
+  	height: 26px;
+}
+.filtro1-item {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 41.5px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 83px;
+  	height: 26px;
+}
+.romance {
+  	position: absolute;
+  	top: 5px;
+  	left: 14px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 55px;
+  	height: 15px;
+}
+.filtro13 {
+  	position: absolute;
+  	top: calc(50% - 154px);
+  	left: calc(50% - 82px);
+  	width: 78px;
+  	height: 26px;
+}
+.filtro1-inner {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 39px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 78px;
+  	height: 26px;
+}
+.misterio {
+  	position: absolute;
+  	top: 5px;
+  	left: 15px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 49px;
+  	height: 15px;
+}
+.filtro14 {
+  	position: absolute;
+  	top: calc(50% - 154px);
+  	left: calc(50% + 7px);
+  	width: 76px;
+  	height: 26px;
+}
+.rectangle-div {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 38px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 76px;
+  	height: 26px;
+}
+.fantasia {
+  	position: absolute;
+  	top: 5px;
+  	left: 12px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 51px;
+  	height: 15px;
+}
+.tropes-favoritos {
+  	position: absolute;
+  	top: 450px;
+  	left: 24px;
+  	font-size: 14px;
+  	font-weight: 600;
+}
+.filtro15 {
+  	position: absolute;
+  	top: calc(50% - 70px);
+  	left: calc(50% - 176px);
+  	width: 94px;
+  	height: 26px;
+}
+.filtro1-child2 {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 47px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 94px;
+  	height: 26px;
+}
+.fake-dating {
+  	position: absolute;
+  	top: 5px;
+  	left: 13px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 68px;
+  	height: 15px;
+}
+.filtro16 {
+  	position: absolute;
+  	top: calc(50% - 70px);
+  	left: calc(50% - 76px);
+  	width: 119px;
+  	height: 26px;
+}
+.filtro1-child3 {
+  	position: absolute;
+  	top: calc(50% - 13px);
+  	left: calc(50% - 59.5px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 119px;
+  	height: 26px;
+}
+.enemies-to-lovers {
+  	position: absolute;
+  	top: 5px;
+  	left: 9px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 104px;
+  	height: 15px;
+}
+.numeros {
+  	position: absolute;
+  	top: 551px;
+  	left: 54px;
+  	width: 304px;
+  	height: 38px;
+  	font-size: 16px;
+  	color: #af2848;
+}
+.div {
+  	position: absolute;
+  	top: 0px;
+  	left: 6px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 24px;
+  	height: 22px;
+}
+.div2 {
+  	position: absolute;
+  	top: 0px;
+  	left: 91px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 30px;
+  	height: 18px;
+}
+.div3 {
+  	position: absolute;
+  	top: 0px;
+  	left: 181px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 21px;
+  	height: 18px;
+}
+.div4 {
+  	position: absolute;
+  	top: 0px;
+  	left: 270px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 20px;
+  	height: 18px;
+}
+.libros {
+  	position: absolute;
+  	top: 23px;
+  	left: 0px;
+  	font-size: 12px;
+  	color: #8a7f7a;
+}
+.seguidores {
+  	position: absolute;
+  	top: 23px;
+  	left: 74px;
+  	font-size: 12px;
+  	color: #8a7f7a;
+}
+.siguiendo {
+  	position: absolute;
+  	top: 23px;
+  	left: 163px;
+  	font-size: 12px;
+  	color: #8a7f7a;
+}
+.reseas {
+  	position: absolute;
+  	top: 22px;
+  	left: 256px;
+  	font-size: 12px;
+  	color: #8a7f7a;
+}
+.barrita-3 {
+  	position: absolute;
+  	top: calc(50% + 75px);
+  	left: calc(50% - 206px);
+  	width: 412px;
+  	height: 43px;
+  	font-size: 14px;
+  	color: #75162d;
+}
+.rectangle-parent {
+  	position: absolute;
+  	top: calc(50% - 21.5px);
+  	left: calc(50% - 206px);
+  	width: 412px;
+  	height: 43px;
+}
+.group-child {
+  	position: absolute;
+  	top: calc(50% - 21.5px);
+  	left: calc(50% - 206px);
+  	background-color: rgba(242, 229, 198, 0.24);
+  	width: 412px;
+  	height: 43px;
+}
+.frame {
+  	position: absolute;
+  	top: 12.39px;
+  	left: 26.54px;
+  	width: 30.3px;
+  	height: 17.5px;
+  	overflow: hidden;
+}
+.leyendo {
+  	position: absolute;
+  	top: 11px;
+  	left: 48px;
+  	display: inline-block;
+  	width: 62px;
+  	height: 19px;
+}
+.ledos {
+  	position: absolute;
+  	top: 11px;
+  	left: 189px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 47px;
+  	height: 18px;
+}
+.lista {
+  	position: absolute;
+  	top: 11px;
+  	left: 315px;
+  	font-weight: 600;
+  	display: inline-block;
+  	width: 35px;
+  	height: 19px;
+}
+.barrita {
+  	position: absolute;
+  	top: calc(50% + 17.68px);
+  	left: calc(50% - 184px);
+  	width: 108px;
+  	height: 3.4px;
+}
+.barrita-child {
+  	position: absolute;
+  	top: calc(50% - 1.7px);
+  	left: calc(50% - 54px);
+  	border-radius: 3px;
+  	background-color: #4a0e1d;
+  	width: 108px;
+  	height: 3.4px;
+}
+.frame2 {
+  	position: absolute;
+  	top: 0.99px;
+  	left: 6.96px;
+  	border-radius: 3px;
+  	width: 8px;
+  	height: 1.4px;
+  	overflow: hidden;
+}
+.barrita2 {
+  	position: absolute;
+  	top: 39.99px;
+  	left: 227.21px;
+  	width: 12.8px;
+  	height: 1.4px;
+}
+.frame3 {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 3px;
+  	width: 12.8px;
+  	height: 1.4px;
+  	overflow: hidden;
+}
+.card1 {
+  	position: absolute;
+  	top: 706px;
+  	left: 23px;
+  	width: 366px;
+  	height: 169px;
+  	color: #af2848;
+}
+.card {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  	border-radius: 25px;
+  	background-color: #fff;
+  	width: 366px;
+  	height: 169px;
+}
+.porcentaje {
+  	position: absolute;
+  	top: calc(50% + 27.5px);
+  	left: calc(50% - 46px);
+  	width: 52px;
+  	height: 21px;
+}
+.porcentaje-child {
+  	position: absolute;
+  	top: calc(50% - 10.5px);
+  	left: calc(50% - 26px);
+  	border-radius: 14px;
+  	background-color: rgba(224, 115, 141, 0.72);
+  	border: 1px solid #4a0e1d;
+  	box-sizing: border-box;
+  	width: 52px;
+  	height: 21px;
+}
+.div5 {
+  	position: absolute;
+  	top: 3px;
+  	left: 15px;
+  	font-weight: 500;
+  	display: inline-block;
+  	width: 33px;
+  	height: 12px;
+}
+.barrapro {
+  	position: absolute;
+  	top: calc(50% + 8.5px);
+  	left: calc(50% - 46px);
+  	width: 190px;
+  	height: 6.4px;
+}
+.barrapro-inner {
+  	position: absolute;
+  	top: calc(50% - 3.2px);
+  	left: calc(50% - 95px);
+  	width: 190px;
+  	height: 6.4px;
+}
+.group-item {
+  	position: absolute;
+  	top: calc(50% - 3.2px);
+  	left: calc(50% - 95px);
+  	border-radius: 3px;
+  	background-color: #4a0e1d;
+  	width: 190px;
+  	height: 6.4px;
+}
+.barrapro-child {
+  	position: absolute;
+  	top: calc(50% - 3.2px);
+  	left: calc(50% - 95px);
+  	width: 97px;
+  	height: 6.4px;
+}
+.group-inner {
+  	position: absolute;
+  	top: calc(50% - 3.2px);
+  	left: calc(50% - 48.5px);
+  	border-radius: 3px;
+  	background-color: #af2848;
+  	width: 97px;
+  	height: 6.4px;
+}
+.the-deal {
+  	position: absolute;
+  	top: 29px;
+  	left: 137px;
+  	font-size: 16px;
+  	display: inline-block;
+  	color: #75162d;
+  	width: 121px;
+  	height: 19px;
+}
+.elle-kennedy {
+  	position: absolute;
+  	top: 61px;
+  	left: 137px;
+  	font-size: 13px;
+  	color: #000;
+}
+.thedeal-icon {
+  	position: absolute;
+  	top: calc(50% - 72.5px);
+  	left: calc(50% - 157px);
+  	width: 91px;
+  	height: 129.2px;
+  	object-fit: cover;
+}
+.puntos-icon {
+  	position: absolute;
+  	top: 21px;
+  	left: 322px;
+  	width: 24px;
+  	height: 24px;
+  	object-fit: contain;
+}
+.card2 {
+  	position: absolute;
+  	top: 899px;
+  	left: 23px;
+  	width: 366px;
+  	height: 169px;
+  	color: #af2848;
+}
+.themistake-icon {
+  	position: absolute;
+  	top: calc(50% - 63.5px);
+  	left: calc(50% - 157px);
+  	width: 91px;
+  	height: 122.2px;
+  	object-fit: cover;
+}
+.nav-bar {
+  	position: absolute;
+  	top: 1040px;
+  	left: 0px;
+  	background-color: #4a0e1d;
+  	width: 412px;
+  	height: 62px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 11px 25px;
+  	box-sizing: border-box;
+  	gap: 70px;
+}
+.home-icon {
+  	height: 25px;
+  	width: 25px;
+  	position: relative;
+  	cursor: pointer;
+}
+.search-icon {
+  	height: 30px;
+  	width: 30px;
+  	position: relative;
+}
+
+.menu-btn{
+    position:absolute;
+    top:55px;
+    left:24px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    z-index:10000;
+}
+
+.hamburguer-icon {
+    width: 45px;
+    height: 45px;
+}
+
+/* ===== Overlay ===== */
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:412px;
+    height:917px;
+
+    background:rgba(0,0,0,.35);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:998;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ===== Drawer ===== */
+
+.drawer{
+    position:absolute;
+    top:0;
+    left:-300px;
+    width:300px;
+    height:917px;
+    background:#FAF6EE;
+    display:flex;
+    flex-direction:column;
+    transition:left .35s ease;
+    z-index:99999 !important;
+}
+
+.drawer.open{
+    left:0;
+}
+
+/* Header */
+
+.drawer-header{
+
+    background:#4A0E1D;
+
+    padding:34px 24px;
+
+    color:white;
+
+}
+
+.drawer-profile{
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-bottom:18px;
+
+}
+
+.drawer-header h2{
+
+    font-size:20px;
+
+    margin:0;
+
+}
+
+.drawer-header span{
+
+    font-size:15px;
+
+    opacity:.85;
+
+}
+
+/* Menú */
+
+.drawer-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:24px;
+
+    gap:28px;
+
+}
+
+.drawer-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    color:#4A0E1D;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+}
+
+.drawer-menu img{
+
+    width:28px;
+
+}
+
+/* Configuración */
+
+.drawer-settings{
+
+    margin-top:auto;
+
+    margin:24px;
+
+    background:rgba(242,229,198,.6);
+
+    border-radius:100px;
+
+    padding:14px 18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#4A0E1D;
+
+}
+
+.drawer-settings .left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.drawer-settings img{
+
+    width:22px;
+
+}

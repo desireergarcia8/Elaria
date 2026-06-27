@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>Chat Space</title>
+    <link rel="stylesheet" href="./chatgrupales2.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <div class="chat-grupales">
+        
+        <div class="chat-grupales-child"></div>
+        
+        <div class="chat-header-container header-principal-centrado" id="chatHeaderBox">
+            <button type="button" id="btnBack" onclick="regresarAListas()" style="display: none;">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="chatHeaderAvatar" class="chat-header-avatar" src="thedeal.png" alt="" style="display: none;">
+            <div class="chat-header-text">
+                <b class="mensajes" id="chatTitle">Mensajes</b>
+                <span id="chatSubtitle" class="chat-subtitle" style="display: none;">6 miembros leyendo</span>
+            </div>
+        </div>
+
+        <div class="tab" id="mainTabs">
+            <button class="tablinks active" onclick="mostrarGrupos(event)">
+                Grupos
+            </button>
+            <button class="tablinks" onclick="mostrarMensajes(event)">
+                Mensajes
+            </button>
+        </div>
+        
+        <div id="grupos">
+            <button class="card1" id="cardDealBtn" aria-label="Abrir grupo The Deal" onclick="abrirChat('THE DEAL', 'grupo_deal', 'thedeal.png', '6 miembros leyendo')">
+                <div class="card">
+                    <div class="card-child"></div>
+                </div>
+                <img class="thedeal-icon" alt="" src="thedeal.png">
+                
+                <div class="barprocess">
+                    <div class="barprocess-child"></div>
+                    <div class="frame"></div>
+                    <div class="rectangle-parent">
+                        <div class="group-child"></div>
+                        <div class="frame2"></div>
+                    </div>
+                </div>
+                <div class="leyendo">
+                    <div class="leyendo-child"></div>
+                    <div class="frame3"></div>
+                    <div class="leyendo2">6 leyendo</div>
+                    <img class="personas2-icon" alt="" src="personas2.svg">
+                </div>
+                <b class="the-deal">THE DEAL</b>
+                <div class="elle-kennedy">Elle Kennedy • Cap 15 de 352</div>
+            </button>
+            
+            <button class="card2" id="cardMistakeBtn" aria-label="Abrir grupo The Mistake" onclick="abrirChat('THE MISTAKE', 'grupo_mistake', 'themistake.png', '34 miembros leyendo')">
+                <div class="card">
+                    <div class="card-child"></div>
+                </div>
+                <div class="barprocess">
+                    <div class="barprocess-child"></div>
+                    <div class="frame"></div>
+                    <div class="rectangle-parent">
+                        <div class="group-child"></div>
+                        <div class="frame2"></div>
+                    </div>
+                </div>
+                <div class="leyendo">
+                    <div class="leyendo-child"></div>
+                    <div class="frame3"></div>
+                    <div class="leyendo2">34 leyendo</div>
+                    <img class="personas2-icon" alt="" src="personas2.svg">
+                </div>
+                <b class="the-deal">THE MISTAKE</b>
+                <div class="elle-kennedy">Elle Kennedy • Cap 73 de 400</div>
+                <div class="themistake">
+                    <img class="themistake-icon" alt="" src="themistake.png">
+                </div>
+            </button>
+            
+            <img class="puntos-icon" alt="" src="3puntos.svg">
+            <img class="puntos-icon2" alt="" src="3puntos.svg">
+        </div>
+
+        <div id="mensajesTab">
+            <button class="chat-card" onclick="abrirChat('Sofía Bautista', 'ind_sofia', 'imgperfil.svg', 'En línea')">
+                <img src="imgperfil.svg" class="chat-img" alt="">
+                <div class="chat-info">
+                    <div class="chat-header">
+                        <b>Sofía Bautista</b>
+                        <span>9:32 PM</span>
+                    </div>
+                    <div class="chat-preview">¿Ya terminaste el capítulo 15?</div>
+                </div>
+            </button>
+
+            <button class="chat-card chat-card2" onclick="abrirChat('Camila Ewens', 'ind_camila', 'imgperfil2.svg', 'En línea')">
+                <img src="imgperfil2.svg" class="chat-img" alt="">
+                <div class="chat-info">
+                    <div class="chat-header">
+                        <b>Camila Ewens</b>
+                        <span>8:15 PM</span>
+                    </div>
+                    <div class="chat-preview">Te envié una recomendación 📚</div>
+                </div>
+            </button>
+        </div>
+
+        <div id="vistaChatInterno" style="display: none;">
+            <div class="reading-status-banner" id="groupChatBanner">
+                <i class="bookmark-icon fas fa-bookmark"></i>
+                <div class="banner-info">
+                    <span class="banner-title" id="bannerTitle">Capítulo 15 de 352</span>
+                    <span class="banner-author" id="bannerAuthor">Elle Kennedy</span>
+                </div>
+                <button class="btn-read-chapter">Leer capítulo</button>
+            </div>
+
+            <div class="chatSpace" id="chatSpaceArea">
+                <div id="chatText">
+                </div>
+            </div>
+
+            <div class="quote-dropdown-menu" id="quoteDropdown">
+                <button type="button" class="dropdown-item-btn" onclick="enviarQuote()">
+                    <i class="fas fa-quote-right"></i> <span>Compartir quote</span>
+                </button>
+                <button type="button" class="dropdown-item-btn">
+                    <i class="far fa-image"></i> <span>Foto</span>
+                </button>
+                <button type="button" class="dropdown-item-btn">
+                    <i class="fas fa-download"></i> <span>Archivo</span>
+                </button>
+            </div>
+
+            <div class="input-chat-bar-container">
+                <div class="input-chat-bar">
+                    <button type="button" class="btn-action-plus" onclick="toggleMenu(event)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <form class="form-chat-send" onsubmit="event.preventDefault(); enviarMensajeTexto();">
+                        <input type="text" id="talk" placeholder="Escribe un mensaje..." autocomplete="off">
+                        <button type="submit" class="btn-send-message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-bar" id="bottomNavBar">
+            <button class="nav-btn" id="navHomeBtn" aria-label="Inicio" onclick="home()">
+                <img class="home-icon" alt="" src="homenormal.svg">
+            </button>
+            <button class="nav-btn" id="navSearchBtn" aria-label="Buscar">
+                <img class="home-icon" alt="" src="search.svg">
+            </button>
+            <button class="nav-btn" id="navNotificationsBtn" aria-label="Notificaciones" onclick="notif()">
+                <img class="home-icon" alt="" src="notifications.svg">
+            </button>
+            <button class="nav-btn" id="navSmsBtn" aria-label="Mensajes" onclick="regresarAListas()">
+                <img class="home-icon" alt="" src="smsfill.svg">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const historialChats = {
+            grupo_deal: [
+                { tipo: 'recibido', usuario: 'Sofía Bautista', avatar: 'imgperfil.svg', texto: 'Garrett está DEMASIADO enamorado y ni él mismo lo quiere admitir JAJAJA', tiempo: '4:48 PM' },
+                { tipo: 'enviado', texto: 'Literal la manera en que mira a Hannah', tiempo: '4:50 PM' },
+                { tipo: 'recibido', usuario: 'Gianna Flores', avatar: 'imgperfil3.svg', texto: 'Es que ya no se siente como "fake dating" ni nada, se siente demasiado real', tiempo: '4:53 PM' },
+                { tipo: 'enviado', texto: 'EXACTOOOOOOOOOOOOOOOOO', tiempo: '4:55 PM' }
+            ],
+            grupo_mistake: [
+                { tipo: 'recibido', usuario: 'Camila Ewens', avatar: 'imgperfil2.svg', texto: '¿Qué les parece el inicio de The Mistake?', tiempo: '6:12 PM' }
+            ],
+            ind_sofia: [
+                { tipo: 'recibido', usuario: 'Sofía Bautista', avatar: 'imgperfil.svg', texto: '¿Ya terminaste el capítulo 15?', tiempo: '9:32 PM' },
+                { tipo: 'enviado', texto: 'holaaa', tiempo: '8:47 PM' }
+            ],
+            ind_camila: [
+                { tipo: 'recibido', usuario: 'Camila Ewens', avatar: 'imgperfil2.svg', texto: 'Te envié una recomendación 📚', tiempo: '8:15 PM' }
+            ]
+        };
+
+        let chatActivoActual = '';
+
+        function home(){
+            document.location = "home.html";
+        }
+
+        function mostrarGrupos(evt){
+            document.getElementById("grupos").style.display = "block";
+            document.getElementById("mensajesTab").style.display = "none";
+            document.getElementById("vistaChatInterno").style.display = "none";
+            document.getElementById("bottomNavBar").style.display = "flex";
+
+            let botones = document.getElementsByClassName("tablinks");
+            for(let i=0; i<botones.length; i++){
+                botones[i].classList.remove("active");
+            }
+            evt.currentTarget.classList.add("active");
+        }
+
+        function mostrarMensajes(evt){
+            document.getElementById("grupos").style.display = "none";
+            document.getElementById("mensajesTab").style.display = "block";
+            document.getElementById("vistaChatInterno").style.display = "none";
+            document.getElementById("bottomNavBar").style.display = "flex";
+
+            let botones = document.getElementsByClassName("tablinks");
+            for(let i=0; i<botones.length; i++){
+                botones[i].classList.remove("active");
+            }
+            evt.currentTarget.classList.add("active");
+        }
+
+        function abrirChat(nombreChat, idChat, avatarUrl, subtituloText) {
+            chatActivoActual = idChat;
+            
+            document.getElementById("chatHeaderBox").classList.remove("header-principal-centrado");
+
+            document.getElementById("grupos").style.display = "none";
+            document.getElementById("mensajesTab").style.display = "none";
+            document.getElementById("mainTabs").style.display = "none";
+            document.getElementById("bottomNavBar").style.display = "none";
+
+            document.getElementById("chatTitle").innerText = nombreChat;
+            document.getElementById("chatTitle").classList.add("activo");
+            
+            const avatarImg = document.getElementById("chatHeaderAvatar");
+            avatarImg.src = avatarUrl;
+            avatarImg.style.display = "block";
+
+            const sub = document.getElementById("chatSubtitle");
+            sub.innerText = subtituloText;
+            sub.style.display = "block";
+            
+            document.getElementById("btnBack").style.display = "block";
+            
+            const banner = document.getElementById("groupChatBanner");
+            const chatSpace = document.getElementById("chatSpaceArea");
+            if(idChat.startsWith("grupo_")) {
+                banner.style.display = "flex";
+                chatSpace.style.top = "200px";
+                if(idChat === 'grupo_mistake') {
+                    document.getElementById("bannerTitle").innerText = "Capítulo 73 de 400";
+                } else {
+                    document.getElementById("bannerTitle").innerText = "Capítulo 15 de 352";
+                }
+            } else {
+                banner.style.display = "none";
+                chatSpace.style.top = "121px";
+            }
+
+            document.getElementById("vistaChatInterno").style.display = "block";
+            renderizarMensajes();
+        }
+
+        function regresarAListas() {
+            document.getElementById("chatHeaderBox").classList.add("header-principal-centrado");
+
+            document.getElementById("mainTabs").style.display = "block";
+            document.getElementById("bottomNavBar").style.display = "flex";
+            
+            document.getElementById("btnBack").style.display = "none";
+            document.getElementById("chatHeaderAvatar").style.display = "none";
+            document.getElementById("chatSubtitle").style.display = "none";
+            
+            document.getElementById("chatTitle").innerText = "Mensajes";
+            document.getElementById("chatTitle").classList.remove("activo");
+            
+            document.getElementById("vistaChatInterno").style.display = "none";
+            document.getElementById("quoteDropdown").style.display = "none";
+
+            const tabActiva = document.querySelector(".tablinks.active");
+            if (tabActiva && tabActiva.innerText.includes("Grupos")) {
+                document.getElementById("grupos").style.display = "block";
+            } else {
+                document.getElementById("mensajesTab").style.display = "block";
+            }
+        }
+
+        function renderizarMensajes() {
+            const chatTextContainer = document.getElementById("chatText");
+            chatTextContainer.innerHTML = "";
+            
+            const mensajes = historialChats[chatActivoActual] || [];
+            
+            mensajes.forEach(msg => {
+                let htmlBurbuja = "";
+                if (msg.tipo === 'recibido') {
+                    htmlBurbuja = `
+                        <div class="msg-row msg-recibido">
+                            <img src="${msg.avatar}" class="msg-avatar-img">
+                            <div class="msg-body-box">
+                                <span class="msg-author-name">${msg.usuario}</span>
+                                <div class="msg-bubble-content">${msg.texto}</div>
+                                <span class="msg-time-stamp">${msg.tiempo}</span>
+                            </div>
+                        </div>
+                    `;
+                } else if (msg.tipo === 'enviado') {
+                    htmlBurbuja = `
+                        <div class="msg-row msg-enviado">
+                            <div class="msg-body-box">
+                                <div class="msg-bubble-content">${msg.texto}</div>
+                                <span class="msg-time-stamp">${msg.tiempo}</span>
+                            </div>
+                        </div>
+                    `;
+                } else if (msg.tipo === 'quote') {
+                    // Usamos la propiedad msg.capitulo que se guarda al crear la quote
+                    htmlBurbuja = `
+                        <div class="msg-row msg-enviado">
+                            <div class="msg-body-box">
+                                <div class="quote-card-message-bubble">
+                                    <span class="quote-mark-start">“</span>
+                                    <div class="quote-lines-simulated"></div>
+                                    <div class="quote-lines-simulated short-line"></div>
+                                    <div class="quote-lines-simulated"></div>
+                                    <span class="quote-chapter-label">Capítulo ${msg.capitulo}</span>
+                                    <span class="quote-mark-end">”</span>
+                                </div>
+                                <span class="msg-time-stamp">${msg.tiempo}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                chatTextContainer.innerHTML += htmlBurbuja;
+            });
+            
+            const container = document.getElementById("chatSpaceArea");
+            if(container) container.scrollTop = container.scrollHeight;
+        }
+
+        function obtenerHoraActual() {
+            const ahora = new Date();
+            let horas = ahora.getHours();
+            let minutes = now = ahora.getMinutes();
+            const ampm = horas >= 12 ? 'PM' : 'AM';
+            horas = horas % 12;
+            horas = horas ? horas : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            return horas + ':' + minutes + ' ' + ampm;
+        }
+
+        function enviarMensajeTexto() {
+            const inputTalk = document.getElementById("talk");
+            const texto = inputTalk.value.trim();
+            if (texto === "") return;
+
+            historialChats[chatActivoActual].push({
+                tipo: 'enviado',
+                texto: texto,
+                tiempo: obtenerHoraActual()
+            });
+
+            inputTalk.value = "";
+            renderizarMensajes();
+        }
+
+        function enviarQuote() {
+        
+            let nroCapitulo = "15"; 
+            if (chatActivoActual === "grupo_mistake") {
+                nroCapitulo = "73";
+            }
+
+            historialChats[chatActivoActual].push({
+                tipo: 'quote',
+                capitulo: nroCapitulo,
+                tiempo: obtenerHoraActual()
+            });
+
+            document.getElementById("quoteDropdown").style.display = "none";
+            renderizarMensajes();
+        }
+
+        function toggleMenu(event) {
+            event.stopPropagation();
+            const menu = document.getElementById("quoteDropdown");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        document.addEventListener("click", function() {
+            document.getElementById("quoteDropdown").style.display = "none";
+        });
+    </script>
+
+    <script>
+        function notif(){
+            document.location = "notificaciones.html"
+        }
+    </script>
+    
+</body>
+</html>

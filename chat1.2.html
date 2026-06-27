@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	<link rel="stylesheet" href="./chat1.2.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+	<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  	
+  	<div class="chat-12">
+    		<div class="chat-12-child">
+    		</div>
+    		<img class="puntos-icon" alt="" src="3puntos.svg">
+    		
+    		<div class="chat-12-inner">
+      			<div class="group-child">
+      			</div>
+    		</div>
+    		<img class="thedealperfil-icon" alt="" src="thedealperfil.png">
+    		
+    		<b class="the-deal">THE DEAL</b>
+
+    		<button class="back-btn" onclick="goBack()">
+    			<i class="fa-solid fa-chevron-left"></i>
+			</button>
+    		
+    		<div class="miembros-leyendo">6 miembros leyendo</div>
+    		<div class="rectangle-parent">
+      			<div class="group-item">
+      			</div>
+      			<b class="hoy">Hoy</b>
+    		</div>
+    		<div class="rectangle-group">
+      			<div class="group-inner">
+      			</div>
+      			<div class="captulo-15-de">Capítulo 15 de 352</div>
+      			<div class="elle-kennedy">Elle Kennedy</div>
+      			<img class="guardar-icon" alt="" src="fave.svg">
+    		</div>
+            
+    		<div class="chat1">
+      			<img class="imgperfil-icon" alt="" src="imgperfil.svg">
+      			<b class="sofia-bautista">Sofia Bautista</b>
+      			<div class="chat1-child">
+      			</div>
+      			<div class="garrett-est-demasiado">Garrett está DEMASIADO enamorado y ni él mismo lo quiere admitir JAJAJA</div>
+      			<div class="pm">4:48 PM</div>
+    		</div>
+            
+    		<div class="chat12">
+      			<img class="imgperfil-icon" alt="" src="imgperfil3.svg">
+      			<b class="sofia-bautista">Gianna Flores</b>
+      			<div class="chat1-child">
+      			</div>
+      			<div class="es-que-ya">Es que ya no se siente como “fake dating” ni nada, se siente demasiado real</div>
+      			<div class="pm">4:53 PM</div>
+    		</div>
+            
+    		<div class="rectangle-container">
+      			<div class="rectangle-div">
+      			</div>
+      			<div class="literal-la-manera">Literal la manera en que mira a Hannah</div>
+      			<div class="pm3">4:50 PM</div>
+    		</div>
+            
+    		<div class="group-div">
+      			<div class="rectangle-div">
+      			</div>
+      			<div class="literal-la-manera">EXACTOOOOOOOOOOOOOO</div>
+      			<div class="pm3">4:55 PM</div>
+    		</div>
+
+    		<div class="quoteenv" id="quoteEnviado">
+      			<img class="quote-card-background" alt="" src="quoteenv.svg">
+      		
+    		</div>
+            
+    		<div class="chat-12-item">
+    		</div>
+    		<div class="chat-12-child2">
+    		</div>
+    		
+    		<button class="send2-btn" id="chatSendBtn" aria-label="Enviar mensaje">
+        		<img class="send2-icon" alt="" src="send2.svg">
+    		</button>
+    		
+    		<div class="escribe-un-mensaje">Escribe un mensaje...</div>
+    		
+    		<button class="mas2-btn" id="chatMasBtn" aria-label="Más opciones">
+        		<img class="mas2-icon" alt="" src="mas2.svg">
+    		</button>
+    		
+    		<div class="modal" id="opcionesModal">
+      			<div class="modalcard"></div>
+      			<img class="foto-icon" alt="" src="foto.svg">
+      			<button class="compartir-quote-btn" id="btnCompartirQuote">Compartir quote</button>
+      			<div class="foto">Foto</div>
+      			<div class="archivo">Archivo</div>
+      			<img class="quote-icon-modal" alt="" src="quote.svg">
+      			<img class="archivo-icon" alt="" src="archivo.svg">
+      			<div class="modal-child-line"></div>
+    		</div>
+    		
+    		<div class="chat-12-child3">
+    		</div>
+    		<div class="leer-captulo">Leer capítulo</div>
+            
+            <div class="chat-12-lineadespegable">
+    		</div>
+  	</div>
+
+  	<script>
+    		const masBtn = document.getElementById('chatMasBtn');
+    		const opcionesModal = document.getElementById('opcionesModal');
+    		const compartirQuoteBtn = document.getElementById('btnCompartirQuote');
+    		const quoteEnviado = document.getElementById('quoteEnviado');
+
+    		masBtn.addEventListener('click', (e) => {
+      			e.stopPropagation();
+      			if (opcionesModal.style.display === 'block') {
+        				opcionesModal.style.display = 'none';
+      			} else {
+        				opcionesModal.style.display = 'block';
+      			}
+    		});
+
+    		compartirQuoteBtn.addEventListener('click', () => {
+      			opcionesModal.style.display = 'none';
+      			quoteEnviado.style.display = 'block';
+    		});
+
+    		document.addEventListener('click', (e) => {
+      			if (!opcionesModal.contains(e.target) && e.target !== masBtn) {
+        				opcionesModal.style.display = 'none';
+      			}
+    		});
+
+            
+
+            
+  	</script>
+
+	<script>
+function goBack() {
+    document.location = "chatgrupales1.html";
+}
+</script>
+
+</body>
+</html>
